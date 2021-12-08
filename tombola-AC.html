@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Tombola - AC</title>
+</head>
+
+<style>
+    .numberCell {
+        padding: 5px;
+        background-color: rgb(247, 251, 255);
+        border: 1px solid black;
+        /*font-weight: bold;*/
+        font-size: 1.5em;
+    }
+</style>
+
+<body style="background-color: white;">
+    <div class="container-fluid">
+        <div class="row justify-content-center" style="background-color:#8B0000;">
+            <div class="col-md-8">
+                <h1 class="text-center" style="padding-top: 40px; padding-bottom: 30px; color: white;"
+                    onclick="location.reload()">Tombola <span id="tombolaHeadName"></span> </h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5 col-2 offset-md-1">
+                <br>
+                <a class=" btn btn btn-light text-decoration-none" href="./36-cartelle-tombola.pdf" target="_blank" style="font-size: 0.9em;">Cartelle</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div id="div-extracted-number" class="row justify-content-center text-center">
+            <div class="col-md-8">
+                <p id="numberToShow" style="font-size: 10em;"></p>
+            </div>
+        </div>
+
+        <div id="div-final-message" class="row justify-content-center text-center collapse">
+            <div class="col-md-8 offset-md-2">
+                <br>
+                <p class="text-center" style="font-size: 4em;">Tombola terminata! <br> 🎄 ✨</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center text-center">
+            <div class="col-md-8">
+                <br>
+                <button id="btn-extract" class="btn btn-outline-dark btn-lg">Estrai numero</button>
+            </div>
+        </div>
+
+        <!-- Tabellone estrazione ... -->
+        <br><br>
+        <div class="row justify-content-center text-center">
+            <div id="number-1" class="col-md-1 col-2">
+                <p class="numberCell">1</p>
+            </div>
+            <div id="number-2" class="col-md-1 col-2">
+                <p class="numberCell">2</p>
+            </div>
+            <div id="number-3" class="col-md-1 col-2">
+                <p class="numberCell">3</p>
+            </div>
+            <div id="number-4" class="col-md-1 col-2">
+                <p class="numberCell">4</p>
+            </div>
+            <div id="number-5" class="col-md-1 col-2">
+                <p class="numberCell">5</p>
+            </div>
+            <div id="number-6" class="col-md-1 col-2">
+                <p class="numberCell">6</p>
+            </div>
+            <div id="number-7" class="col-md-1 col-2">
+                <p class="numberCell">7</p>
+            </div>
+            <div id="number-8" class="col-md-1 col-2">
+                <p class="numberCell">8</p>
+            </div>
+            <div id="number-9" class="col-md-1 col-2">
+                <p class="numberCell">9</p>
+            </div>
+            <div id="number-10" class="col-md-1 col-2">
+                <p class="numberCell">10</p>
+            </div>
+            <div id="number-11" class="col-md-1 col-2">
+                <p class="numberCell">11</p>
+            </div>
+            <div id="number-12" class="col-md-1 col-2">
+                <p class="numberCell">12</p>
+            </div>
+            <div id="number-13" class="col-md-1 col-2">
+                <p class="numberCell">13</p>
+            </div>
+            <div id="number-14" class="col-md-1 col-2">
+                <p class="numberCell">14</p>
+            </div>
+            <div id="number-15" class="col-md-1 col-2">
+                <p class="numberCell">15</p>
+            </div>
+            <div id="number-16" class="col-md-1 col-2">
+                <p class="numberCell">16</p>
+            </div>
+            <div id="number-17" class="col-md-1 col-2">
+                <p class="numberCell">17</p>
+            </div>
+            <div id="number-18" class="col-md-1 col-2">
+                <p class="numberCell">18</p>
+            </div>
+            <div id="number-19" class="col-md-1 col-2">
+                <p class="numberCell">19</p>
+            </div>
+            <div id="number-20" class="col-md-1 col-2">
+                <p class="numberCell">20</p>
+            </div>
+            <div id="number-21" class="col-md-1 col-2">
+                <p class="numberCell">21</p>
+            </div>
+            <div id="number-22" class="col-md-1 col-2">
+                <p class="numberCell">22</p>
+            </div>
+            <div id="number-23" class="col-md-1 col-2">
+                <p class="numberCell">23</p>
+            </div>
+            <div id="number-24" class="col-md-1 col-2">
+                <p class="numberCell">24</p>
+            </div>
+            <div id="number-25" class="col-md-1 col-2">
+                <p class="numberCell">25</p>
+            </div>
+            <div id="number-26" class="col-md-1 col-2">
+                <p class="numberCell">26</p>
+            </div>
+            <div id="number-27" class="col-md-1 col-2">
+                <p class="numberCell">27</p>
+            </div>
+            <div id="number-28" class="col-md-1 col-2">
+                <p class="numberCell">28</p>
+            </div>
+            <div id="number-29" class="col-md-1 col-2">
+                <p class="numberCell">29</p>
+            </div>
+            <div id="number-30" class="col-md-1 col-2">
+                <p class="numberCell">30</p>
+            </div>
+            <div id="number-31" class="col-md-1 col-2">
+                <p class="numberCell">31</p>
+            </div>
+            <div id="number-32" class="col-md-1 col-2">
+                <p class="numberCell">32</p>
+            </div>
+            <div id="number-33" class="col-md-1 col-2">
+                <p class="numberCell">33</p>
+            </div>
+            <div id="number-34" class="col-md-1 col-2">
+                <p class="numberCell">34</p>
+            </div>
+            <div id="number-35" class="col-md-1 col-2">
+                <p class="numberCell">35</p>
+            </div>
+            <div id="number-36" class="col-md-1 col-2">
+                <p class="numberCell">36</p>
+            </div>
+            <div id="number-37" class="col-md-1 col-2">
+                <p class="numberCell">37</p>
+            </div>
+            <div id="number-38" class="col-md-1 col-2">
+                <p class="numberCell">38</p>
+            </div>
+            <div id="number-39" class="col-md-1 col-2">
+                <p class="numberCell">39</p>
+            </div>
+            <div id="number-40" class="col-md-1 col-2">
+                <p class="numberCell">40</p>
+            </div>
+            <div id="number-41" class="col-md-1 col-2">
+                <p class="numberCell">41</p>
+            </div>
+            <div id="number-42" class="col-md-1 col-2">
+                <p class="numberCell">42</p>
+            </div>
+            <div id="number-43" class="col-md-1 col-2">
+                <p class="numberCell">43</p>
+            </div>
+            <div id="number-44" class="col-md-1 col-2">
+                <p class="numberCell">44</p>
+            </div>
+            <div id="number-45" class="col-md-1 col-2">
+                <p class="numberCell">45</p>
+            </div>
+            <div id="number-46" class="col-md-1 col-2">
+                <p class="numberCell">46</p>
+            </div>
+            <div id="number-47" class="col-md-1 col-2">
+                <p class="numberCell">47</p>
+            </div>
+            <div id="number-48" class="col-md-1 col-2">
+                <p class="numberCell">48</p>
+            </div>
+            <div id="number-49" class="col-md-1 col-2">
+                <p class="numberCell">49</p>
+            </div>
+            <div id="number-50" class="col-md-1 col-2">
+                <p class="numberCell">50</p>
+            </div>
+            <div id="number-51" class="col-md-1 col-2">
+                <p class="numberCell">51</p>
+            </div>
+            <div id="number-52" class="col-md-1 col-2">
+                <p class="numberCell">52</p>
+            </div>
+            <div id="number-53" class="col-md-1 col-2">
+                <p class="numberCell">53</p>
+            </div>
+            <div id="number-54" class="col-md-1 col-2">
+                <p class="numberCell">54</p>
+            </div>
+            <div id="number-55" class="col-md-1 col-2">
+                <p class="numberCell">55</p>
+            </div>
+            <div id="number-56" class="col-md-1 col-2">
+                <p class="numberCell">56</p>
+            </div>
+            <div id="number-57" class="col-md-1 col-2">
+                <p class="numberCell">57</p>
+            </div>
+            <div id="number-58" class="col-md-1 col-2">
+                <p class="numberCell">58</p>
+            </div>
+            <div id="number-59" class="col-md-1 col-2">
+                <p class="numberCell">59</p>
+            </div>
+            <div id="number-60" class="col-md-1 col-2">
+                <p class="numberCell">60</p>
+            </div>
+            <div id="number-61" class="col-md-1 col-2">
+                <p class="numberCell">61</p>
+            </div>
+            <div id="number-62" class="col-md-1 col-2">
+                <p class="numberCell">62</p>
+            </div>
+            <div id="number-63" class="col-md-1 col-2">
+                <p class="numberCell">63</p>
+            </div>
+            <div id="number-64" class="col-md-1 col-2">
+                <p class="numberCell">64</p>
+            </div>
+            <div id="number-65" class="col-md-1 col-2">
+                <p class="numberCell">65</p>
+            </div>
+            <div id="number-66" class="col-md-1 col-2">
+                <p class="numberCell">66</p>
+            </div>
+            <div id="number-67" class="col-md-1 col-2">
+                <p class="numberCell">67</p>
+            </div>
+            <div id="number-68" class="col-md-1 col-2">
+                <p class="numberCell">68</p>
+            </div>
+            <div id="number-69" class="col-md-1 col-2">
+                <p class="numberCell">69</p>
+            </div>
+            <div id="number-70" class="col-md-1 col-2">
+                <p class="numberCell">70</p>
+            </div>
+            <div id="number-71" class="col-md-1 col-2">
+                <p class="numberCell">71</p>
+            </div>
+            <div id="number-72" class="col-md-1 col-2">
+                <p class="numberCell">72</p>
+            </div>
+            <div id="number-73" class="col-md-1 col-2">
+                <p class="numberCell">73</p>
+            </div>
+            <div id="number-74" class="col-md-1 col-2">
+                <p class="numberCell">74</p>
+            </div>
+            <div id="number-75" class="col-md-1 col-2">
+                <p class="numberCell">75</p>
+            </div>
+            <div id="number-76" class="col-md-1 col-2">
+                <p class="numberCell">76</p>
+            </div>
+            <div id="number-77" class="col-md-1 col-2">
+                <p class="numberCell">77</p>
+            </div>
+            <div id="number-78" class="col-md-1 col-2">
+                <p class="numberCell">78</p>
+            </div>
+            <div id="number-79" class="col-md-1 col-2">
+                <p class="numberCell">79</p>
+            </div>
+            <div id="number-80" class="col-md-1 col-2">
+                <p class="numberCell">80</p>
+            </div>
+            <div id="number-81" class="col-md-1 col-2">
+                <p class="numberCell">81</p>
+            </div>
+            <div id="number-82" class="col-md-1 col-2">
+                <p class="numberCell">82</p>
+            </div>
+            <div id="number-83" class="col-md-1 col-2">
+                <p class="numberCell">83</p>
+            </div>
+            <div id="number-84" class="col-md-1 col-2">
+                <p class="numberCell">84</p>
+            </div>
+        </div>
+        <!-- ... tabellone estrazione -->
+        <div class="row text-center">
+            <div id="number-85" class="col-md-1 col-2">
+                <p class="numberCell">85</p>
+            </div>
+            <div id="number-86" class="col-md-1 col-2">
+                <p class="numberCell">86</p>
+            </div>
+            <div id="number-87" class="col-md-1 col-2">
+                <p class="numberCell">87</p>
+            </div>
+            <div id="number-88" class="col-md-1 col-2">
+                <p class="numberCell">88</p>
+            </div>
+            <div id="number-89" class="col-md-1 col-2">
+                <p class="numberCell">89</p>
+            </div>
+            <div id="number-90" class="col-md-1 col-2">
+                <p class="numberCell">90</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(function () {
+
+            var tombolaHeadName = prompt("Scegli un nome per la tua tombola!");
+            if (tombolaHeadName.trim() != "")
+                $("#tombolaHeadName").text("- " + tombolaHeadName);
+
+            // min included, max excluded
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            var totalNumbers = 90;
+            extractedNumbers = [];
+            extractionExtecuted = 0;
+
+            $("#btn-extract").click(function () {
+                console.log("click on btn " + totalNumbers);
+                if (extractionExtecuted < totalNumbers) {
+                    var number = getRndInteger(1, totalNumbers + 1);
+                    while (extractedNumbers.includes(number)) {
+                        number = getRndInteger(1, totalNumbers + 1);
+                    }
+                    extractedNumbers.push(number);
+                    extractionExtecuted++;
+                    $("#numberToShow").text(number);
+                    var numberId = "#number-" + number + " > .numberCell";
+                    $(numberId).css({ "background-color": "yellow", "font-weight": "bold" });
+                }
+                else {
+                    $("#div-extracted-number").hide();
+                    $("#div-final-message").fadeIn();
+                    $("#btn-extract").hide();
+
+                }
+            });
+
+
+
+
+        })
+    </script>
+
+</body>
+
+</html>
