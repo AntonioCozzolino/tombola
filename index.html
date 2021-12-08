@@ -354,8 +354,10 @@
         $(function () {
 
             var tombolaHeadName = prompt("Scegli un nome per la tua tombola!");
-            if (tombolaHeadName.trim() != "")
-                $("#tombolaHeadName").text("- " + tombolaHeadName);
+            if (tombolaHeadName != "" && tombolaHeadName != null){
+                $("#tombolaHeadName").text("- " + tombolaHeadName.trim());
+            }
+                
 
             // min included, max excluded
             function getRndInteger(min, max) {
